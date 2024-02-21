@@ -35,3 +35,7 @@ function enqueue_child_assets() {
         array(), _VER, true
     );
 }
+
+foreach ( glob( get_stylesheet_directory() . '/include/_*.php' ) as $file ) {
+    require_once $file;
+}

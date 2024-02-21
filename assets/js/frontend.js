@@ -2,7 +2,7 @@
 // GLOBALS
 // ======================
 
-window.DEBUG = true;
+window.DEBUG = false;
 if (window.DEBUG) document.body.classList.add("debug--enabled");
 
 // ======================
