@@ -1,0 +1,38 @@
+.underlink,
+.elementor-button.elementor-size-xs,
+.elementor-button.elementor-size-sm {
+    --animation-delay: 200ms;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.0625rem;
+        left: 0;
+        height: 0.0625rem;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left center;
+        background-color: currentColor;
+        transition: transform var(--easeOut--neutral);
+    }
+
+    &::after {
+        transform: scaleX(1);
+        transition-delay: var(--animation-delay);
+        transform-origin: right center;
+    }
+
+    &:hover {
+        &::before {
+            transform: scaleX(1);
+            transition-delay: var(--animation-delay);
+        }
+
+        &::after {
+            transform: scaleX(0);
+            transition-delay: 0ms;
+        }
+    }
+}

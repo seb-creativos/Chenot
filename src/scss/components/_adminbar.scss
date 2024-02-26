@@ -1,16 +1,15 @@
 #wpadminbar {
     opacity: 0;
     top: -46px !important;
-    transition: top 600ms ease, opacity 600ms ease;
+    transition: top var(--easeOut--neutral), opacity var(--easeOut--neutral);
 
     &::after {
         content: "";
         position: absolute;
-        left: 0;
         top: 100%;
+        left: 0;
         height: 1rem;
         width: 100%;
-        // background-color: red;
     }
 
     &:hover {
