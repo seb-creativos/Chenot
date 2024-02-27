@@ -1,7 +1,7 @@
 #wpadminbar {
     opacity: 0;
     top: -46px !important;
-    transition: top var(--easeOut--neutral), opacity var(--easeOut--neutral);
+    transition: top var(--easeOut), opacity var(--easeOut);
 
     &::after {
         content: "";
