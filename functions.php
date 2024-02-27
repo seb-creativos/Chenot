@@ -36,6 +36,6 @@ function enqueue_child_assets() {
     );
 }
 
-foreach ( glob( get_stylesheet_directory() . '/include/_*.php' ) as $file ) {
+foreach ( glob( get_stylesheet_directory() . '/includes/_*.php' ) as $file ) {
     require_once $file;
 }

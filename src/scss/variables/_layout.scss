@@ -1,4 +1,12 @@
 :root {
+    // MIN: 16px, MAX: 100px, between 320px and 1920px
+    --c-spacing: clamp(1rem, 5.25vw - 0.05rem, 6.25rem);
+
+    // MIN: 16px, MAX: 100px, between 320px and 1920px
     --c-gap: clamp(1rem, 5.25vw - 0.05rem, 6.25rem);
+    // MIN: 16px, MAX: 50px, between 320px and 1920px
     --c-gap--half: clamp(1rem, 2.125vw + 0.575rem, 3.125rem);
+
+    // MIN: 8px, MAX: 16px, between 320px and 1920px
+    --c-border-radius: clamp(0.5rem, 0.5vw + 0.4rem, 1rem);
 }

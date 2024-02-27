@@ -1,0 +1,5 @@
+.elementor-widget-image,
+.elementor-widget-video {
+    border-radius: var(--c-border-radius) 0 0 var(--c-border-radius);
+    overflow: hidden;
+}

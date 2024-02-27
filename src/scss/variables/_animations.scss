@@ -1,0 +1,17 @@
+:root {
+    --easeInQuad: cubic-bezier(0.55, 0.08, 0.68, 0.53);
+    --easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --easeInOutQuad: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+
+    --easeIn: 600ms var(--easeInQuad);
+    --easeOut: 600ms var(--easeOutQuad);
+    --easeInOut: 600ms var(--easeInOutQuad);
+
+    --easeIn--fast: 400ms var(--easeInQuad);
+    --easeOut--fast: 400ms var(--easeOutQuad);
+    --easeInOut--fast: 400ms var(--easeInOutQuad);
+
+    --easeIn--slow: 800ms var(--easeInQuad);
+    --easeOut--slow: 800ms var(--easeOutQuad);
+    --easeInOut--slow: 800ms var(--easeInOutQuad);
+}
