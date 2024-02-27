@@ -25,6 +25,9 @@ $skip_link_url = apply_filters( 'hello_elementor_skip_link_url', '#content' );
 </head>
 <body <?php body_class(); ?>>
 
+<!-- Loader -->
+<?php get_template_part( 'templates/loader' ) ?>
+
 <?php wp_body_open(); ?>
 
 <?php if ( $enable_skip_link ) { ?>
