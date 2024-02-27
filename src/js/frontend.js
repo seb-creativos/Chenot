@@ -13,7 +13,7 @@ if (window.DEBUG) document.body.classList.add("debug--enabled");
 import "../scss/frontend.scss";
 
 // Elementor
-import parallax from "./libs/elementor/parallax";
+import setParallax from "./libs/elementor/setParallax";
 
 // GSAP
 import initGsap from "./libs/gsap/initGsap";
@@ -28,7 +28,7 @@ import exitLoader from "./utils/exitLoader";
 
 // DOC Ready
 function documentReady() {
-    parallax();
+    setParallax();
     initGsap();
 }
 document.addEventListener(`DOMContentLoaded`, documentReady, false);
