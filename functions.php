@@ -25,13 +25,13 @@ function enqueue_child_assets() {
 	
 	wp_enqueue_style(
         'frontend',
-        get_stylesheet_directory_uri() . '/assets/css/frontend.min.css',
+        get_stylesheet_directory_uri() . '/dist/css/frontend.css',
         array(), _VER, 'all'
     );
 
 	wp_enqueue_script(
         'frontend',
-        get_stylesheet_directory_uri() . '/assets/js/frontend.js',
+        get_stylesheet_directory_uri() . '/dist/js/frontend.js',
         array(), _VER, true
     );
 }
