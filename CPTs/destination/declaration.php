@@ -40,13 +40,14 @@ function register_destination_cpt() : void {
 	$labels = apply_filters( 'destination-labels', $labels );
 
 	$args = [
-		'label'               => __( 'Destination', 'chenot' ),
-		'labels'              => $labels,
-		'show_ui'             => true,
-		'menu_position'       => 2,
-		'menu_icon'           => '/wp-content/uploads/2024/02/destinations.svg',
-		'show_in_nav_menus'   => true,
-		'show_in_rest'        => true,
+		'label'                 => __( 'Destination', 'chenot' ),
+		'labels'                => $labels,
+		'show_ui'               => true,
+		'menu_position'         => 21,
+		'menu_icon'             => '/wp-content/uploads/2024/03/destinations.svg',
+		'show_in_nav_menus'     => true,
+		'show_in_rest'          => true,
+        'publicly_queryable'    => true,
 	];
 	$args = apply_filters( 'destination-args', $args );
 
