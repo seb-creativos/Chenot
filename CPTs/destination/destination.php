@@ -53,6 +53,8 @@ function register_destination_cpt() : void {
 			'editor',
 			'thumbnail',
 		],
+        'public' => true,
+
 	];
 	$args = apply_filters( 'destination-args', $args );
 
