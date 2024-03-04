@@ -45,9 +45,7 @@ function register_treatment_cpt() : void {
 		'show_ui'               => true,
 		'menu_position'         => 21,
 		'menu_icon'             => '/wp-content/uploads/2024/03/treatments.svg',
-		'show_in_nav_menus'     => true,
 		'show_in_rest'          => true,
-        'publicly_queryable'    => true,
         'supports'              => [
 			'title',
 			'editor',
