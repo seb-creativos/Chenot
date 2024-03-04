@@ -34,7 +34,8 @@ function register_destination_category_tax() : void {
 		'labels'            => $labels,
 		'hierarchical'      => true,
 		'show_in_rest'      => true,
-        'show_admin_column' => true
+        'show_admin_column' => true,
+        'show_in_nav_menus' => false,
 	];
 
 	register_taxonomy( 'destination-category', ['destination'], $args );
