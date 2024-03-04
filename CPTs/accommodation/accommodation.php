@@ -48,6 +48,11 @@ function register_accommodation_cpt() : void {
 		'show_in_nav_menus'     => true,
 		'show_in_rest'          => true,
         'publicly_queryable'    => true,
+        'supports'              => [
+			'title',
+			'editor',
+			'thumbnail',
+		],
 	];
 	$args = apply_filters( 'accommodation-args', $args );
 
