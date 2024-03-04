@@ -5,6 +5,8 @@ h4,
 h5,
 h6,
 p {
+    margin-top: 0 !important;
+
     &:last-child {
         margin-bottom: 0;
     }
