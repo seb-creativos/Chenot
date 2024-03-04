@@ -44,7 +44,7 @@ function register_accommodation_cpt() : void {
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'menu_position'         => 21,
-		'menu_icon'             => '/wp-content/uploads/2024/03/accommodations.svg',
+		'menu_icon'             => '/wp-content/uploads/2024/03/accommodations-icon.svg',
 		'show_in_rest'          => true,
         'supports'              => [
 			'title',

@@ -44,7 +44,7 @@ function register_programme_cpt() : void {
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'menu_position'         => 21,
-		'menu_icon'             => '/wp-content/uploads/2024/03/programmes.svg',
+		'menu_icon'             => '/wp-content/uploads/2024/03/programmes-icon.svg',
 		'show_in_rest'          => true,
         'supports'              => [
 			'title',
