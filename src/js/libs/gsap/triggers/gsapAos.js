@@ -10,25 +10,26 @@ export default function initGsapAos() {
      * @param {HTMLElement} el - The HTML element to be animated.
      */
     function gsapAos(el) {
-        const animationType = el.getAttribute("data-aos");
+        const animationType = el.getAttribute("aos");
 
         if (!gsapAnimations[animationType]) {
             console.error(`Invalid animation type: ${animationType}`);
             return;
         }
 
-        const duration = parseFloat(el.getAttribute("data-aos-duration")) || 1;
-        const delay = parseFloat(el.getAttribute("data-aos-delay")) || 0.2;
-        const start = el.getAttribute("data-aos-start") || "top bottom";
-        const end = el.getAttribute("data-aos-end") || "center center";
+        const duration = parseFloat(el.getAttribute("aos-duration")) || 1;
+        const delay = parseFloat(el.getAttribute("aos-delay")) || 0.2;
+        const start = el.getAttribute("aos-start") || "top bottom";
+        const end = el.getAttribute("aos-end") || "center center";
 
-        const repeat = el.hasAttribute("data-aos-repeat");
-        const scrub = el.hasAttribute("data-aos-scrub");
+        const repeat = el.hasAttribute("aos-repeat");
+        const scrub = el.hasAttribute("aos-scrub");
 
         let split;
-        const splitType = el.getAttribute("data-aos-split-type") || "words";
-        const splitStagger = parseFloat(el.getAttribute("data-aos-split-stagger")) || 0.05;
-        const splitFrom = el.getAttribute("data-aos-split-from") || "start";
+        const splitType = el.getAttribute("split-type") || "words";
+        const splitStagger =
+            parseFloat(el.getAttribute("split-stagger")) || 0.05;
+        const splitFrom = el.getAttribute("split-from") || "start";
 
         // Check if the animation type includes any form of "split".
         if (animationType.includes("split")) {
@@ -44,14 +45,18 @@ export default function initGsapAos() {
         }
 
         // Determine the target of the animation - either the splitted text elements or just the element itself.
-        const animatedElement = animationType.includes("split") ? split[splitType] : el;
+        const animatedElement = animationType.includes("split")
+            ? split[splitType]
+            : el;
 
         gsap.to(animatedElement, {
             ...gsapAnimations[animationType].target,
             duration: duration,
             delay: delay,
             ease: "Power3.inOut",
-            stagger: animationType.includes("split") ? { each: splitStagger, from: splitFrom } : null,
+            stagger: animationType.includes("split")
+                ? { each: splitStagger, from: splitFrom }
+                : null,
 
             scrollTrigger: {
                 trigger: el,
@@ -60,11 +65,13 @@ export default function initGsapAos() {
                 start: start,
                 end: end,
 
-                toggleActions: repeat ? "play none none reverse" : "play none none none",
+                toggleActions: repeat
+                    ? "play none none reverse"
+                    : "play none none none",
                 scrub: scrub,
                 once: !(scrub || repeat),
             },
         });
     }
-    document.querySelectorAll("[data-aos]").forEach(gsapAos);
+    document.querySelectorAll("[aos]").forEach(gsapAos);
 }
