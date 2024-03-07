@@ -1,0 +1,27 @@
+.offcanvas-backdrop {
+    position: fixed;
+    z-index: 5;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgb(0 0 0 / 30%);
+    backdrop-filter: blur(40px);
+
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-30%);
+
+    transition: opacity var(--easeOut--slow), transform var(--easeOut--slow);
+
+    &--is-active {
+        pointer-events: auto;
+        visibility: visible;
+        opacity: 1;
+        transform: unset;
+    }
+}
