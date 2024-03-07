@@ -16,7 +16,8 @@
     opacity: 0;
     transform: translateX(-30%);
 
-    transition: opacity var(--easeOut--slow), transform var(--easeOut--slow);
+    transition: opacity var(--easeOut--slow), visibility var(--easeOut--slow),
+        transform var(--easeOut--slow);
 
     &--is-active {
         pointer-events: auto;
