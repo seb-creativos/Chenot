@@ -10,6 +10,8 @@ export default function offcanvas() {
 
             if (targetElement) {
                 targetElement.classList.toggle("offcanvas--showing");
+                this.classList.toggle("offcanvas-toggler--active");
+
                 if (targetElement.classList.contains("offcanvas--showing")) {
                     window.debugLog(
                         `%cOffcanvas "${targetId}" is now showing.`,
