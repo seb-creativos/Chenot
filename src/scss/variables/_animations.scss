@@ -14,4 +14,12 @@
     --easeIn--slow: 800ms var(--easeInQuad);
     --easeOut--slow: 800ms var(--easeOutQuad);
     --easeInOut--slow: 800ms var(--easeInOutQuad);
+
+    --easeIn--super-slow: 1200ms var(--easeInQuad);
+    --easeOut--super-slow: 1200ms var(--easeOutQuad);
+    --easeInOut--super-slow: 1200ms var(--easeInOutQuad);
+
+    --easeIn--giga-slow: 1600ms var(--easeInQuad);
+    --easeOut--giga-slow: 1600ms var(--easeOutQuad);
+    --easeInOut--giga-slow: 1600ms var(--easeInOutQuad);
 }
