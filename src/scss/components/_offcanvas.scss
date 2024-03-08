@@ -13,6 +13,9 @@
     justify-content: center;
 
     background-color: var(--nude);
+
+    transition: visibility var(--easeOut), opacity var(--easeOut),
+        transform var(--easeOut);
 }
 
 .offcanvas-backdrop {
@@ -27,6 +30,9 @@
 
     background-color: rgb(0 0 0 / 30%);
     backdrop-filter: blur(40px);
+
+    transition: visibility var(--easeOut--slow), opacity var(--easeOut--slow),
+        transform var(--easeOut--slow);
 }
 
 .offcanvas,
@@ -35,9 +41,6 @@
     visibility: hidden;
     opacity: 0;
     transform: translateX(-30%);
-
-    transition: opacity var(--easeOut--slow), visibility var(--easeOut--slow),
-        transform var(--easeOut--slow);
 
     &--is-active {
         pointer-events: auto;
