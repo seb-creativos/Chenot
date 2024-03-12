@@ -1,0 +1,48 @@
+.menu-icon {
+    --line-stroke: 0.0625rem;
+
+    border: unset !important;
+    padding: unset !important;
+    background: unset !important;
+    outline: unset !important;
+
+    width: 3.5rem !important;
+    height: 3.125rem;
+
+    &__line {
+        position: absolute;
+        right: 0;
+        margin-top: calc(var(--line-stroke) / -2);
+
+        height: var(--line-stroke);
+        width: 100%;
+        background-color: var(--white);
+
+        transition: visibility var(--easeOut), opacity var(--easeOut),
+            transform var(--easeOut);
+
+        &:nth-child(1) {
+            transform: translateY(-0.5rem);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(0.5rem);
+        }
+    }
+
+    &--is-active .menu-icon__line {
+        &:nth-child(1) {
+            transform: translateY(0) rotate(-45deg) scale(80%);
+        }
+
+        &:nth-child(2) {
+            transform: rotate(-45deg) scale(80%);
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &:nth-child(3) {
+            transform: translateY(0) rotate(45deg) scale(80%);
+        }
+    }
+}
