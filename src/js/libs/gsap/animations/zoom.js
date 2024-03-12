@@ -23,4 +23,8 @@ export default {
         origin: { filter: "sepia(50%)", scale: 1.2 },
         target: { filter: "sepia(0%)", scale: 1 },
     },
+    "zoom-out-blur": {
+        origin: { filter: "blur(14px)", scale: 1.2 },
+        target: { filter: "blur(0px)", scale: 1 },
+    },
 };
