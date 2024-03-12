@@ -10,17 +10,16 @@ export default function exitLoader(target) {
         const rootElement = document.querySelector("html");
         rootElement.classList.add("page--loaded");
 
-        if (window.DEBUG) {
-            console.log("Loader has been dismissed.");
-        }
+        debugLog("%cLoader has been dismissed.", window.debugStyles.info);
 
         // Escape the Loader
         setTimeout(() => {
             loaderElement.remove();
 
-            if (window.DEBUG) {
-                console.log("Loader has been destroyed.");
-            }
+            debugLog(
+                "%cLoader has been destroyed.",
+                window.debugStyles.success
+            );
         }, 7000);
     }
 }
