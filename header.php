@@ -25,7 +25,7 @@ $skip_link_url = apply_filters( 'hello_elementor_skip_link_url', '#content' );
 </head>
 <body <?php body_class(); ?>>
 
-<!-- Loader -->
+<!-- Custom Loader -->
 <?php get_template_part( 'template-parts/loader' ) ?>
 
 <?php wp_body_open(); ?>
@@ -45,6 +45,9 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 	}
 }
 ?>
+
+<!-- Custom Offcanvas Navigation -->
+<?php get_template_part( 'template-parts/offcanvas-navigation' ) ?>
 
 <!-- Scroll Smoother -->
 <div id="smooth-wrapper">
