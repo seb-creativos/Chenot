@@ -18,8 +18,9 @@
         width: 100%;
         background-color: var(--white);
 
-        transition: visibility var(--easeOut), opacity var(--easeOut),
-            transform var(--easeOut);
+        transition: visibility var(--header-transitions, 2s),
+            opacity var(--header-transitions, 2s),
+            transform var(--header-transitions, 2s);
 
         &:nth-child(1) {
             transform: translateY(-0.5rem);

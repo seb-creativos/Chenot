@@ -1,0 +1,41 @@
+.menu-icon {
+    --line-stroke: 0.0625rem;
+
+    border: unset !important;
+    padding: unset !important;
+    background: unset !important;
+    outline: unset !important;
+
+    width: 2.875rem !important;
+    height: 3.125rem;
+
+    &__line {
+        position: absolute;
+        right: 0;
+        margin-top: calc(var(--line-stroke) / -2);
+
+        height: var(--line-stroke);
+        width: 100%;
+        background-color: var(--white);
+
+        transition: transform var(--header-transitions, 2s);
+
+        &:first-of-type {
+            transform: translateY(-0.25rem);
+        }
+
+        &:last-of-type {
+            transform: translateY(0.25rem);
+        }
+    }
+
+    &--is-active .menu-icon__line {
+        &:first-of-type {
+            transform: translateY(0) rotate(-45deg) scale(80%);
+        }
+
+        &:last-of-type {
+            transform: translateY(0) rotate(45deg) scale(80%);
+        }
+    }
+}
