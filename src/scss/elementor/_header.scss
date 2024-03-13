@@ -1,0 +1,29 @@
+#site-header {
+    position: fixed;
+    z-index: 20;
+
+    transition: background-color var(--easeOut--fast, 2s),
+        box-shadow var(--easeOut--fast, 2s);
+
+    .menu-icon__line,
+    .menu-icon__label,
+    .elementor-widget-theme-site-logo,
+    .elementor-button {
+        transition: all var(--easeOut--fast, 2s);
+    }
+}
+
+.has-reached--header,
+.has-active--offcanvas {
+    #site-header {
+        background-color: #fff;
+        box-shadow: 0 10px 40px -20px rgb(0 0 0 / 8%);
+
+        .elementor-widget-theme-site-logo {
+            filter: invert(1);
+        }
+
+        --white: var(--black);
+        --e-global-color-8c9a33e: var(--black);
+    }
+}
