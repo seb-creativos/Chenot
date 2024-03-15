@@ -1,6 +1,8 @@
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function initGsapIsInview(triggerId) {
+    if (!triggerId) return;
+
     const cleanTriggerId = triggerId.replace(/[^a-z0-9-_]/gi, "");
     const isInviewClass = `${cleanTriggerId}--is-inview`;
 
