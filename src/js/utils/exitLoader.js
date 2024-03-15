@@ -7,8 +7,7 @@ export default function exitLoader(target) {
     const loaderElement = document.querySelector(target);
 
     if (loaderElement) {
-        const rootElement = document.querySelector("html");
-        rootElement.classList.add("page--loaded");
+        document.documentElement.classList.add("was-loaded");
 
         debugLog("%cLoader has been dismissed.", window.debugStyles.info);
 

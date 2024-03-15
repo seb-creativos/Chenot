@@ -14,7 +14,7 @@ $loaderStyle: "fill-logo--right"; // simple || fill-logo--up/down/right/left
     transition: opacity var(--easeOut--slow);
 }
 
-.page--loaded #siteLoader {
+.page-has-loaded #siteLoader {
     opacity: 0;
     pointer-events: none;
 }
