@@ -1,13 +1,13 @@
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function initGsapIsElementInview(triggerId) {
-    if (!triggerId) return;
+export default function initGsapIsElementInview(elementId) {
+    if (!elementId) return;
 
-    const cleanTriggerId = triggerId.replace(/[^a-z0-9-_]/gi, "");
-    const isInviewClass = `${cleanTriggerId}--is-inview`;
+    const cleanElementId = elementId.replace(/[^a-z0-9-_]/gi, "");
+    const isInviewClass = `${cleanElementId}--is-inview`;
 
     ScrollTrigger.create({
-        trigger: triggerId,
+        trigger: elementId,
         start: "top bottom",
         end: "bottom top",
 
