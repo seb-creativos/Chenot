@@ -1,9 +1,11 @@
 /**
  * Get the specified dimensions (height, width, or both) of the selectors.
+ * @param {...any} selectors Selectors of the elements to measure.
  * @param {string} dimension 'height', 'width', or 'both' to specify which dimensions to get.
- * @param  {...any} selectors Selectors of the elements to measure.
  */
-const getDimensions = (dimension, ...selectors) => {
+const getDimensions = (...selectors) => {
+    const dimension = selectors.pop();
+
     selectors.forEach((selector) => {
         if (typeof selector !== "string") {
             console.error(
