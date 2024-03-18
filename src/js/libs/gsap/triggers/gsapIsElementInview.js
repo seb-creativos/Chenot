@@ -1,3 +1,5 @@
+const debug = false;
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function initGsapIsElementInview(elementId) {
@@ -16,6 +18,6 @@ export default function initGsapIsElementInview(elementId) {
             className: isInviewClass,
         },
 
-        markers: window.DEBUG,
+        markers: debug,
     });
 }
