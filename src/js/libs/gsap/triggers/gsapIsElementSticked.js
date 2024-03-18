@@ -1,5 +1,5 @@
 import { createDebugLogger } from "../../../utils/initDebug";
-const debug = true;
+const debug = false;
 const consoleLog = createDebugLogger(debug);
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
