@@ -31,7 +31,7 @@ export default {
             textShadow: `#FFF0 0px 0px, #FFF0 0px 0px, #FFF0 0px 0px, #FFF0 0px 0px`,
         },
     },
-    "split-up-clip": {
+    "split-up-clip-up": {
         origin: {
             opacity: 0,
             yPercent: 100,
@@ -43,7 +43,7 @@ export default {
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         },
     },
-    "split-down-clip": {
+    "split-up-clip-down": {
         origin: {
             opacity: 0,
             yPercent: 100,
