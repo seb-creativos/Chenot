@@ -10,7 +10,10 @@ module.exports = (projectOptions) => {
     };
 
     const cssRules = {
-        test: projectOptions.projectCss.use === "sass" ? projectOptions.projectCss.rules.sass.test : projectOptions.projectCss.rules.postcss.test,
+        test:
+            projectOptions.projectCss.use === "sass"
+                ? projectOptions.projectCss.rules.sass.test
+                : projectOptions.projectCss.rules.postcss.test,
         exclude: /(node_modules|bower_components|vendor)/,
         use: [
             MiniCssExtractPlugin.loader,
@@ -18,7 +21,9 @@ module.exports = (projectOptions) => {
             {
                 loader: "postcss-loader",
                 options: {
-                    postcssOptions: require(projectOptions.projectCss.postCss)(projectOptions),
+                    postcssOptions: require(projectOptions.projectCss.postCss)(
+                        projectOptions
+                    ),
                 },
             },
         ],
