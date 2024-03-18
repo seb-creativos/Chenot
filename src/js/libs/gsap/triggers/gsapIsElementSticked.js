@@ -1,3 +1,7 @@
+import { createDebugLogger } from "../../../utils/initDebug";
+const debug = true;
+const consoleLog = createDebugLogger(debug);
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function initGsapIsElementSticked(elementId) {
@@ -15,20 +19,20 @@ export default function initGsapIsElementSticked(elementId) {
 
         onEnter: () => {
             document.body.classList.add(isStickedClass);
-            window.debugLog(
-                `Body got the class: %c${isStickedClass}`,
-                window.debugStyles.action
+            consoleLog(
+                `<body> %cgot%c the class: %c${isStickedClass}%c.`,
+                "success"
             );
         },
 
         onLeaveBack: () => {
             document.body.classList.remove(isStickedClass);
-            window.debugLog(
-                `Body lost the class: %c${isStickedClass}`,
-                window.debugStyles.error
+            consoleLog(
+                `<body> %clost%c the class: %c${isStickedClass}%c.`,
+                "error"
             );
         },
 
-        markers: window.DEBUG,
+        markers: debug,
     });
 }
