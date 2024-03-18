@@ -35,7 +35,9 @@ module.exports = (projectOptions) => {
      * Add sourcemap if enabled
      */
     const sourceMap = {
-        devtool: projectOptions.projectSourceMaps.enable ? projectOptions.projectSourceMaps.devtool : false,
+        devtool: projectOptions.projectSourceMaps.enable
+            ? projectOptions.projectSourceMaps.devtool
+            : false,
     };
 
     /**
