@@ -19,15 +19,11 @@ const createDebugLogger = (debugEnabled) => {
             return;
         }
 
-        // Look up the style by key from the debugStyles object.
         const style = debugStyles[styleKey] || debugStyles.default;
 
-        // Check if the message includes '%c' to apply styling.
         if (message.includes("%c")) {
-            // If '%c' is included, apply the style to the specified segment.
             console.log(message, style);
         } else {
-            // If no '%c' is present, apply the style to the entire message.
             console.log(`%c${message}`, style);
         }
     };
