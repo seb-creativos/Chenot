@@ -6,8 +6,13 @@
 
 @import "elementor/main";
 @import "elementor/layout";
+@import "elementor/header";
 @import "elementor/buttons";
+@import "elementor/parallax";
 
 @import "components/loader";
+@import "components/offcanvas";
 @import "components/adminbar";
 @import "components/links/underlink";
+
+@import "components/icons/menu-icon/2-lines";
