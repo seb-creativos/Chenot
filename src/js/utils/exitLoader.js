@@ -1,3 +1,7 @@
+import { createDebugLogger } from "./initDebug";
+const debug = true;
+const consoleLog = createDebugLogger(debug);
+
 /**
  * Execute in windowLoad() so the loader
  * goes away as soon as the page is loaded.
@@ -8,17 +12,11 @@ export default function exitLoader(target) {
 
     if (loaderElement) {
         document.documentElement.classList.add("page--is-ready");
+        consoleLog("%cLoader has been dismissed.", "success");
 
-        debugLog("%cLoader has been dismissed.", window.debugStyles.info);
-
-        // Escape the Loader
         setTimeout(() => {
             loaderElement.remove();
-
-            debugLog(
-                "%cLoader has been destroyed.",
-                window.debugStyles.success
-            );
+            consoleLog("Loader has been destroyed.");
         }, 7000);
     }
 }
