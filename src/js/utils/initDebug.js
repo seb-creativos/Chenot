@@ -18,7 +18,10 @@ const debugStyles = {
  * const debug = true;
  * const consoleLog = createDebugLogger(debug);
  *
- * consoleLog("Warning: %cThis part is styled%c, this part is not.", "warning");
+ * consoleLog("%cThis part is styled%c, this part is not.", "warning");
+ * consoleLog("%cThis part is styled%c, this part is not, %cbut this one is%c.", "warning");
+ * consoleLog("%cThis whole sentence is styled.", "warning");
+ * consoleLog("This sentence isn't using any styling.");
  */
 const createDebugLogger = (debugEnabled) => {
     return (message, styleKey) => {
