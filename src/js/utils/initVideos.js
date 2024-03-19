@@ -1,5 +1,5 @@
 import { createDebugLogger } from "./initDebug";
-const debug = true;
+const debug = false;
 const consoleLog = createDebugLogger(debug);
 
 export default function initVideos() {
