@@ -18,6 +18,10 @@
         transform var(--easeOut--slow);
 }
 
+.offcanvas-toggler {
+    cursor: pointer;
+}
+
 .offcanvas-backdrop {
     position: fixed;
     z-index: 5;
