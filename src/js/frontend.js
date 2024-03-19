@@ -14,7 +14,7 @@ import initTriggers from "./libs/gsap/initTriggers";
 
 // Utilities
 import exitLoader from "./utils/exitLoader";
-import offcanvas from "./utils/offcanvas";
+import initOffcanvas from "./utils/initOffcanvas";
 import getScrollProgress from "./utils/getScrollProgress";
 import initVideos from "./utils/initVideos";
 
@@ -28,7 +28,7 @@ function documentReady() {
     initGsap();
     initTriggers();
 
-    offcanvas();
+    initOffcanvas();
 
     initVideos();
 }
