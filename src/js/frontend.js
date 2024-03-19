@@ -1,11 +1,4 @@
 /* +-----------------------------------------+
-|           GLOBALS AREA             		 |
-+-----------------------------------------+ */
-
-window.DEBUG = true;
-if (window.DEBUG) document.body.classList.add("debug--enabled");
-
-/* +-----------------------------------------+
 |           IMPORTS AREA             		 |
 +-----------------------------------------+ */
 
@@ -21,6 +14,9 @@ import initTriggers from "./libs/gsap/initTriggers";
 
 // Utilities
 import exitLoader from "./utils/exitLoader";
+import offcanvas from "./utils/offcanvas";
+import getScrollProgress from "./utils/getScrollProgress";
+import initVideos from "./utils/initVideos";
 
 /* +-----------------------------------------+
 |           EVENTS AREA             		 |
@@ -30,16 +26,22 @@ import exitLoader from "./utils/exitLoader";
 function documentReady() {
     setParallax();
     initGsap();
+    initTriggers();
+
+    offcanvas();
+
+    initVideos();
 }
 document.addEventListener(`DOMContentLoaded`, documentReady, false);
 
 // WINDOW Load
 function windowLoad() {
-    initTriggers();
     exitLoader("#siteLoader");
 }
 window.addEventListener(`load`, windowLoad, false);
 
 // WINDOW Scroll
-function windowScroll() {}
+function windowScroll() {
+    getScrollProgress();
+}
 window.addEventListener(`scroll`, windowScroll, { passive: true });
