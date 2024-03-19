@@ -1,5 +1,5 @@
 import { createDebugLogger } from "./initDebug";
-const debug = false;
+const debug = true;
 const consoleLog = createDebugLogger(debug);
 
 export default function initVideos() {
@@ -11,11 +11,23 @@ export default function initVideos() {
         (entries) => {
             entries.forEach((entry) => {
                 const video = entry.target;
+                consoleLog(
+                    `Video is now ${
+                        entry.isIntersecting ? "%cwithin%c" : "%cout of%c"
+                    } the viewport.`,
+                    "info"
+                );
+
                 if (entry.isIntersecting) {
-                    if (!userPaused.has(video)) {
+                    if (userPaused.has(video)) {
+                        consoleLog(
+                            "Video remains %cpaused%c even though it entered the viewport as %cthe user has explicitly paused it%c before.",
+                            "warning"
+                        );
+                    } else {
                         video.play();
                         consoleLog(
-                            "Video %cplaying as it entered the viewport%c and %cnot user paused%c.",
+                            "Video is now %cplaying as it entered the viewport%c and was %cnot marked as userPaused%c.",
                             "success"
                         );
                     }
@@ -24,7 +36,7 @@ export default function initVideos() {
                         video.pause();
                         autoPaused.add(video);
                         consoleLog(
-                            "Video %cpaused as it left the viewport%c.",
+                            "Video is now %cpaused as it left the viewport%c. It is now marked as %cautoPaused%c.",
                             "error"
                         );
                     }
@@ -40,7 +52,10 @@ export default function initVideos() {
         video.addEventListener("pause", () => {
             if (!autoPaused.has(video)) {
                 userPaused.add(video);
-                consoleLog("Video %cpaused by user%c.", "highlight");
+                consoleLog(
+                    "Video was %cpaused by the user%c. It is now marked as %cuserPaused%c.",
+                    "warning"
+                );
             } else {
                 autoPaused.delete(video);
             }
@@ -50,8 +65,8 @@ export default function initVideos() {
             if (userPaused.has(video)) {
                 userPaused.delete(video);
                 consoleLog(
-                    "Video %cplayed by user%c, removed from %cuserPaused%c if present.",
-                    "highlight"
+                    "Video %cplayed by user%c. It has been removed from the %cuserPaused%c set to allow automatic play in the future.",
+                    "success"
                 );
             }
         });
