@@ -11,8 +11,8 @@ export default function initOffcanvas() {
     const backdrop = document.createElement("div");
     backdrop.classList.add("offcanvas-backdrop");
 
-    let backdropVisible = false;
     let activeOffcanvas = null;
+    let backdropVisible = false;
 
     /**
      * Shows or hides the backdrop. Manages appending and removing the backdrop
@@ -55,4 +55,76 @@ export default function initOffcanvas() {
             );
         }
     }
+
+    /**
+     * Closes the offcanvas menu, if one is currently open. This involves hiding
+     * the offcanvas element, removing any active states, and hiding the backdrop.
+     */
+    function closeOffcanvas() {
+        if (activeOffcanvas) {
+            activeOffcanvas.classList.remove("offcanvas--is-active");
+            document.body.classList.remove("offcanvas--is-active");
+            document
+                .querySelector(".menu-icon")
+                ?.classList.remove("menu-icon--is-active");
+
+            consoleLog(
+                `Offcanvas %c${activeOffcanvas.id}%c is now %chidden%c.`,
+                "error"
+            );
+
+            activeOffcanvas = null;
+            showBackdrop(false);
+        } else {
+            consoleLog("%cNo active offcanvas to close.", "warning");
+        }
+    }
+
+    // Set up event listeners for all toggler elements
+    document
+        .querySelectorAll('[data-toggle="offcanvas"]')
+        .forEach((toggler) => {
+            toggler.addEventListener("click", function () {
+                const targetElement = document.getElementById(
+                    this.getAttribute("data-target")
+                );
+
+                if (!targetElement) {
+                    consoleLog("%cOffcanvas target not found.", "error");
+                    return;
+                }
+
+                const isActive = targetElement.classList.toggle(
+                    "offcanvas--is-active"
+                );
+                document.body.classList.toggle(
+                    "offcanvas--is-active",
+                    isActive
+                );
+                this.querySelector(".menu-icon")?.classList.toggle(
+                    "menu-icon--is-active",
+                    isActive
+                );
+
+                activeOffcanvas = isActive ? targetElement : null;
+                showBackdrop(isActive);
+
+                consoleLog(
+                    `Offcanvas %c${targetElement.id}%c is now %c${
+                        isActive ? "visible" : "hidden"
+                    }%c.`,
+                    isActive ? "success" : "error"
+                );
+            });
+        });
+
+    // Allow closing the offcanvas menu by pressing the ESC key
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" || event.keyCode === 27) {
+            if (activeOffcanvas) {
+                consoleLog("%cESC key pressed. Closing offcanvas.", "warning");
+                closeOffcanvas();
+            }
+        }
+    });
 }
