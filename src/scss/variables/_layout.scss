@@ -1,12 +1,18 @@
 :root {
-    // MIN: 16px, MAX: 100px, between 320px and 1920px
-    --c-spacing: clamp(1rem, 5.25vw - 0.05rem, 6.25rem);
+    /* All clamps have been generated between 320 and 1920px */
 
-    // MIN: 16px, MAX: 100px, between 320px and 1920px
-    --c-gap: clamp(1rem, 5.25vw - 0.05rem, 6.25rem);
-    // MIN: 16px, MAX: 50px, between 320px and 1920px
-    --c-gap--half: clamp(1rem, 2.125vw + 0.575rem, 3.125rem);
+    // MIN: 64px, MAX: 100px
+    --c-spacing--y-axis: clamp(4rem, 2.25vw + 3.55rem, 6.25rem);
+    // MIN: 24px, MAX: 100px
+    --c-spacing--x-axis: clamp(1.5rem, 4.75vw + 0.55rem, 6.25rem);
 
-    // MIN: 8px, MAX: 16px, between 320px and 1920px
+    // MIN: 50px, MAX: 100px
+    --c-gap: clamp(3.125rem, 3.125vw + 2.5rem, 6.25rem);
+    // MIN: 32px, MAX: 50px
+    --c-gap--small: clamp(2rem, 1.125vw + 1.775rem, 3.125rem);
+    // MIN: 16px, MAX: 24px
+    --c-gap--smallest: clamp(1rem, 0.5vw + 0.9rem, 1.5rem);
+
+    // MIN: 8px, MAX: 16px
     --c-border-radius: clamp(0.5rem, 0.5vw + 0.4rem, 1rem);
 }
