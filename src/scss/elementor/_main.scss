@@ -3,3 +3,14 @@
     border-radius: var(--c-border-radius) 0 0 var(--c-border-radius);
     overflow: hidden;
 }
+
+.elementor-widget-image--has-link {
+    img {
+        transition: scale var(--easeOut), filter var(--easeOut);
+    }
+
+    &:hover img {
+        scale: 110% !important;
+        filter: sepia(25%);
+    }
+}
